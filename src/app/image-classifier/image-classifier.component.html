@@ -1,0 +1,10 @@
+<div class="container">
+  <h2>تشخیص اشیاء </h2>
+  <input type="file" (change)="onFileChange($event)" accept="image/*" />
+  <img
+    #image
+    alt="Image Preview"
+    [style.display]="imageLoaded ? 'block' : 'none'"
+  />
+  <p>{{ resultText }}</p>
+</div>
