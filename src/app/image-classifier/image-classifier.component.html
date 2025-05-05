@@ -1,5 +1,8 @@
 <div class="container">
-  <h2>تشخیص اشیاء </h2>
+  @if (loading) {
+
+  <h2>تشخیص اشیاء</h2>
+
   <input type="file" (change)="onFileChange($event)" accept="image/*" />
   <img
     #image
@@ -7,4 +10,10 @@
     [style.display]="imageLoaded ? 'block' : 'none'"
   />
   <p>{{ resultText }}</p>
+
+  } @else {
+
+  <p>هنوز بارگذاری نشده صبور باشید!</p>
+
+  }
 </div>

@@ -13,11 +13,14 @@ export class ImageClassifierComponent {
   classifier: any;
   imageLoaded: boolean = false;
 
+  loading: boolean = false;
+
   constructor() {
     // بارگذاری مدل MobileNet
     ml5.imageClassifier('MobileNet').then((loadedClassifier: any) => {
       this.classifier = loadedClassifier;
       console.log('مدل بارگذاری شد!');
+      this.loading = true;
     });
   }
 
